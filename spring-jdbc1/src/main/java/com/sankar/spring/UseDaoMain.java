@@ -14,12 +14,12 @@ public class UseDaoMain {
 		
 		//service.displayEmpInfo(109);
 		
-		//System.out.println(service.registerEmployee(108, "Sasi", "KPHB", 60000));
+		System.out.println(service.registerEmployee(108, "Sasi", "KPHB", 60000));
 		//System.out.println(service.registerEmployee(109, "Sowji", "Nacharam", 70000));
 		
 		//System.out.println(service.deleteEmp(108));
 		
-		service.getAllEmp();
+		//service.getAllEmp();
 		
 
 	}

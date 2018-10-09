@@ -36,11 +36,14 @@ public class EmpDaoJdbcImpl implements EmpDao {
 			return pst;
 		});
 			response="Hurray! Saved the Data";
+		//throw new RuntimeException("Duplicate from Success- Manually Forced");
+
 		}
 		//catch(DataAccessException e1){
 		catch(DuplicateKeyException e1){
 			//e1.printStackTrace();
-			response="Data Not Saved - Duplicate";
+			//response="Data Not Saved - Duplicate";
+			throw new RuntimeException("Duplicate emp record");
 			
 		}
 		return response;
