@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 
+	<bean id="msg" class="com.sankar.spring.Message" scope="prototype">
+	 -->
+	<bean id="message" class="com.sankar.spring.Message">
+		  
+		<constructor-arg value="Lunch Break"/>
+		<constructor-arg value="Lunch Break is delayed by 10 mins"/>
+		
+	</bean>
+
+	<!--  
+	<bean id="mail" class="com.sankar.spring.Mail" scope="prototype">
+	-->
+	
+	<bean id="mail" class="com.sankar.spring.Mail" autowire="byName">
+		<property name="fromAddress" value="trainer"></property>
+		<property name="toAddress" value="all"></property>
+		<!-- bean wiring example -->
+		<!--  <property name="message" ref="msg"></property> -->
+		<!-- bean wiring example -->
+	</bean>
+
+</beans>
