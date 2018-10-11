@@ -18,12 +18,16 @@ import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@Configuration
-@ComponentScan(basePackages="com.sankar.spring")
-@EnableTransactionManagement
-@EnableJpaRepositories(basePackages="com.sankar.spring.repo")
+//@Configuration
+//@ComponentScan(basePackages="com.sankar.spring")
+//@EnableTransactionManagement
+//@EnableJpaRepositories(basePackages="com.sankar.spring.repo")
 public class DaoConfig {
-
+//This can be configured thru application.properties file as well.. 
+//and For Spring boot - data Source alone is required. No emf & txm are required as well. It will be taken care of by
+//Spring Boot
+	
+/*
 	@Autowired
 	DataSource ds;
 	
@@ -62,5 +66,5 @@ public class DaoConfig {
 		return txm;
 	}
 	
-	
+*/	
 }
