@@ -2,6 +2,7 @@ package com.sankar.spring;
 
 import java.util.List;
 
+import org.apache.commons.codec.binary.Base64;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -15,6 +16,9 @@ public class GetClient {
 
 	public static void main(String[] args) {
 		
+		String userDetails="pavan:welcome1";
+		String encodedCred = new String(Base64.encodeBase64(userDetails.getBytes()));
+		
 		RestTemplate rt = new RestTemplate();
 		
 		//-------------------------------
@@ -23,7 +27,7 @@ public class GetClient {
 		
 		HttpHeaders headers = new HttpHeaders();
 		headers.set("Accept", "application/json");
-		
+		headers.set("Authorization", "Basic " + encodedCred);
 		HttpEntity req = new HttpEntity<>(headers);
 		
 		//ResponseEntity<String> resp=rt.exchange("http://localhost:8081/emp/109", HttpMethod.GET, req, String.class);
