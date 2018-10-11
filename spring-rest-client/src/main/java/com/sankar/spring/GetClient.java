@@ -42,26 +42,6 @@ public class GetClient {
 		resp.getBody().stream().forEach(e->System.out.println(e.getName()+ " " + e.getCity()+ " " + e.getSalary()));
 		
 		
-		//-------------------------------
-		// This is to SAVE a new employee
-		//-------------------------------
-		Emp emp = new Emp(123,"Bharath","6th Phase", 120000);
-				
-		//RestTemplate rt = new RestTemplate();
-		HttpHeaders headers1 = new HttpHeaders();
-		headers.set("Accept", "text/plain");
-		headers.set("Content-Type", "application/json");
-		
-		HttpEntity req1 = new HttpEntity<>(emp,headers);
-		
-		ResponseEntity<String> resp1=rt.exchange("http://localhost:8081/emp/save", HttpMethod.POST, req1, 
-				
-				String.class);
-		
-		System.out.println(resp1.getBody());
-		
-		
-
 	}
 
 }
