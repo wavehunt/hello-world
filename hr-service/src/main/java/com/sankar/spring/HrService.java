@@ -25,7 +25,8 @@ public class HrService {
 		
 		HttpEntity req = new HttpEntity<>(headers);
 		
-		ResponseEntity<Emp> resp=rt.exchange("http://localhost:8081/emp/"+id, HttpMethod.GET, req,Emp.class);
+		//ResponseEntity<Emp> resp=rt.exchange("http://localhost:8081/emp/"+id, HttpMethod.GET, req,Emp.class);
+		ResponseEntity<Emp> resp=rt.exchange("http://emp-service/emp/"+id, HttpMethod.GET, req,Emp.class);
 		return resp;
 		
 	}
@@ -36,7 +37,10 @@ public class HrService {
 		
 		HttpEntity req = new HttpEntity<>(headers);
 		
-		ResponseEntity<List<Emp>> resp=rt.exchange("http://localhost:8081/emp/list", HttpMethod.GET, req,
+		//hard coded url
+		//ResponseEntity<List<Emp>> resp=rt.exchange("http://localhost:8081/emp/list", HttpMethod.GET, req,
+		//eureka registered common url
+		ResponseEntity<List<Emp>> resp=rt.exchange("http://emp-service/emp/list", HttpMethod.GET, req,
 				//Cannot directly use List<Emp.class> here .. need to use below
 				new ParameterizedTypeReference<List<Emp>>() {
 		});
