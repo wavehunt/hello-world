@@ -1,0 +1,5 @@
+com\sankar\spring\entity\Emp.class
+com\sankar\spring\repo\EmpRepository.class
+com\sankar\spring\EmpDataServiceApplication.class
+com\sankar\spring\EmpController.class
+com\sankar\spring\DaoConfig.class
