@@ -1,0 +1,30 @@
+server:
+  port: 9999
+ 
+spring:
+  application:
+    name: zuul-proxy
+    
+    
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/ 
+
+zuul:
+  prefix: /app
+  routes:
+    test-redirect:
+      path: /redirect/**
+      location: http://www.verizon.com      
+    by-service:
+      path: /services/**
+      location: emp-service
+    by-client:
+      path: /client/**
+      location: hr-service
+    by-direct:
+      path: /proxy/**
+      location: localhost:8081
+      
