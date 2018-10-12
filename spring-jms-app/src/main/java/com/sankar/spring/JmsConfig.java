@@ -19,6 +19,7 @@ public class JmsConfig {
 		return cf;
 	}
 	
+	//For Queue based
 	@Bean
 	public JmsTemplate jt() {
 		JmsTemplate jt=new JmsTemplate();
@@ -26,5 +27,13 @@ public class JmsConfig {
 		return jt;
 	}
 	
+	//For Topic - Pub/Sub based
+	@Bean
+	public JmsTemplate jtPubSub() {
+		JmsTemplate jt=new JmsTemplate();
+		jt.setConnectionFactory(connectionFactory());
+		jt.setPubSubDomain(true);
+		return jt;
+	}
 
 }

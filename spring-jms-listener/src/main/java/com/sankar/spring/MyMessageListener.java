@@ -10,7 +10,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyMessageListener {
 	
-	@JmsListener(destination="testQueue",containerFactory="factory")
+	//@JmsListener(destination="testQueue",containerFactory="factory")
+	@JmsListener(destination="demoTopic",containerFactory="factory")
 	public void receive(Message message) {
 		TextMessage tm=(TextMessage) message;
 		try {

@@ -21,10 +21,22 @@ public class JmsConfig {
 		return cf;
 	}
 	
+	//For Queue Based
+	/*
 	@Bean
 	public JmsListenerContainerFactory<?> factory(){
 		DefaultJmsListenerContainerFactory factory=new DefaultJmsListenerContainerFactory();
 		factory.setConnectionFactory(connectionFactory());
+		return factory;
+	}
+	*/
+	
+	//For Pub/Sub
+	@Bean
+	public JmsListenerContainerFactory<?> factory(){
+		DefaultJmsListenerContainerFactory factory=new DefaultJmsListenerContainerFactory();
+		factory.setConnectionFactory(connectionFactory());
+		factory.setPubSubDomain(true);
 		return factory;
 	}
 	
