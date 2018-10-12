@@ -15,7 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sankar.spring.entity.Emp;
 import com.sankar.spring.repo.EmpRepository;
 
+import io.swagger.annotations.Api;
+
 @RestController
+@Api
 public class EmpController {
 	@Autowired
 	private EmpRepository repo;
