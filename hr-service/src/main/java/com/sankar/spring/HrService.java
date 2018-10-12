@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.sankar.spring.entity.Emp;
 
 @Service
@@ -19,6 +20,7 @@ public class HrService {
 	@Autowired
 	RestTemplate rt;
 	
+	@HystrixCommand(fallbackMethod="getEmpFallback")
 	public ResponseEntity<Emp> getEmpDetails(int id) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.set("Accept", "application/json");
@@ -46,6 +48,11 @@ public class HrService {
 		});
 		return resp;
 		
+	}
+	
+	public ResponseEntity<Emp> getEmpFallback(int id) {
+		
+		return ResponseEntity.ok(new Emp()).notFound().build();
 	}
 
 }
