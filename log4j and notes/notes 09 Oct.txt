@@ -1,0 +1,5 @@
+anonymous inner class
+
+functional programming
+-- not supported in java
+

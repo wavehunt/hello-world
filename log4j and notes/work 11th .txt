@@ -1,0 +1,19 @@
+{
+    "empId": 120,
+    "name": "Sankar",
+    "city": "Chennai",
+    "salary": 80000
+}
+
+http://localhost:8081/emp/save
+
+Rest Template
+
+
+welcome1
+$2a$10$UOsllhORt/tBMxW3suGdZe.LMcIha8a/3pRMi4rSDN0DbHWJ57PKq
+
+
+logging:
+level:
+org.springframework.security:debug

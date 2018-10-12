@@ -1,0 +1,51 @@
+java -jar -Dserver.port=8084 emp-data-service.jar
+
+
+@EnableEurekaServer
+
+
+@EnableEurekaServer
+
+
+server: 
+ port: 8761 
+spring: 
+ application: 
+  name: eureka-server
+
+eureka: 
+ client:  
+  register-with-eureka: false
+  fetch-registry: false
+  service-url:
+    defaultZone: http://localhost:8761/eureka/
+
+
+spring -> edit starters
+
+eureka Client
+
+
+
+
+@SpringBootApplication
+@EnableEurekaServer
+public class EurekaServerApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(EurekaServerApplication.class, args);
+	}
+}
+
+
+   eureka:
+    client:
+    register-with-eureka: true
+    service-url: 
+      defaultZone: http://localhost:8761/eureka/
+  
+
+http://localhost:9999/app/service/emp/list
+http://emp-service/emp/list
+
+http://localhost:9999/app/client/hr/emp?id=122
